@@ -644,8 +644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sword: {fileID: 970332052}
   targetPosition: {fileID: 51388808}
-  speed: 40
-  pullBackSpeed: 60
+  speed: 30
+  pullBackSpeed: 45
   boxcolider2d: {fileID: 0}
 --- !u!4 &616876330
 Transform:
@@ -711,8 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdba4e475740ffa4a9b1baf4e6763c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTime: 1
-  maxTime: 1.05
+  minTime: 0.6
+  maxTime: 1
   isGameStart: 0
   cntys:
   - {fileID: 1907194624137386643, guid: 9991e775ae41cc1409f2d8b6ef16edb6, type: 3}
@@ -1192,9 +1192,15 @@ PolygonCollider2D:
       - {x: 1.6566993, y: 0.95357466}
       - {x: 1.6180006, y: 0.90484947}
       - {x: 1.5523071, y: 0.8420172}
-      - {x: 1.3443872, y: 0.6537125}
-      - {x: 1.3363372, y: 0.5464518}
-      - {x: 1.4015718, y: 0.48429948}
+      - {x: 0.9256954, y: 0.36250198}
+      - {x: 0.49419945, y: 0.1123492}
+      - {x: 0.1467911, y: -0.066273496}
+      - {x: -0.1152792, y: -0.17613012}
+      - {x: -0.70694447, y: -0.3772103}
+      - {x: -0.9368328, y: -0.4507375}
+      - {x: -0.5675585, y: -0.6105714}
+      - {x: 0.6329319, y: -0.07124962}
+      - {x: 1.3984519, y: 0.47002703}
       - {x: 1.7780365, y: 0.85128725}
       - {x: 1.97528, y: 1.1487406}
       - {x: 1.9818085, y: 1.2234527}
@@ -1250,7 +1256,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 15af3d0c74ed6404fa54e6e411918453, type: 3}
+  m_audioClip: {fileID: 8300000, guid: df7945324af1cbe4e989ffb50aa67b36, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

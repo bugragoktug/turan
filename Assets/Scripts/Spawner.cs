@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
     IEnumerator objectSpawner(float time)
     {
         int randomNum = Random.Range(0, cntys.Length);
-        GameObject cntr = Instantiate(cntys[randomNum],gameObject.transform.position + new Vector3(Random.Range(0.06f, 2.25f),0,0), Quaternion.identity);
+        GameObject cntr = Instantiate(cntys[randomNum],gameObject.transform.position + new Vector3(Random.Range(0.06f, 2.2f),0,0), Quaternion.identity);
         Destroy(cntr,1.25f);
         yield return new WaitForSeconds(time);
         objectSpawnerCoroutine = null;
