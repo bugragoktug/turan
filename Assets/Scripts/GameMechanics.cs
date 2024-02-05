@@ -1,20 +1,25 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameMechanics : MonoBehaviour
 {
-    public GameObject Sword;
+	public Spawner spawner;
+	public GameObject Sword;
     public GameObject targetPosition;
-    public float speed , pullBackSpeed;
+    public float speed, pullBackSpeed;
     bool targetReached;
     private Vector3 startupPosition;
+    public AudioClip[] swordSounds;
+    private AudioSource audioSource;
 
 
 	void Start()
     {
         startupPosition = Sword.transform.position;
-    }
+		audioSource = GetComponent<AudioSource>();
+	}
 
     bool buttonClicked;
     public BoxCollider2D boxcolider2d;
@@ -24,7 +29,12 @@ public class GameMechanics : MonoBehaviour
         {
             buttonClicked = true;
 			targetReached = false;
-            
+            if (spawner.isGameStart==true)
+            {
+				AudioClip randomSound = swordSounds[Random.Range(0, swordSounds.Length)];
+				audioSource.PlayOneShot(randomSound);
+			}
+			
 		}
 
         if (buttonClicked == true) 
@@ -44,4 +54,5 @@ public class GameMechanics : MonoBehaviour
 
 
 	}
+
 }

@@ -1,2 +1,2 @@
-# Turkish-War-of-Independence
-2. game with using unity
+# TURAN
+TURAN game is an advanced version of the turkish war of independence game

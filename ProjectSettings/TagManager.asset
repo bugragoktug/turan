@@ -4,12 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - TR
-  - uk
-  - ar
-  - fr
-  - it
-  - gr
+  - ally
+  - enemy
   layers:
   - Default
   - TransparentFX

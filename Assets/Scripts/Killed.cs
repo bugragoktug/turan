@@ -4,37 +4,34 @@ using UnityEngine;
 
 public class Killed : MonoBehaviour
 {
-	public ScoreObj scoreObject;
+	public ScoreObj scoreObject; 
+	public AudioClip killsound, deathsound;
+	private AudioSource audioSource;
+	void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
+	public void openSword()
+	{
+		gameObject.SetActive(true);
+	}
 	private void OnTriggerEnter2D(Collider2D killedObject)
 	{
-		if (killedObject.gameObject.CompareTag("uk"))
+		if (killedObject.gameObject.CompareTag("enemy"))
+		{
+			scoreObject.scorePlus();
+			Destroy(killedObject.gameObject);
+			audioSource.PlayOneShot(killsound);
 
-		{
-			scoreObject.scorePlus();
-			Destroy(killedObject.gameObject);	
-		}
-		else if (killedObject.gameObject.CompareTag("ar"))
 
+		}
+		else if (killedObject.gameObject.CompareTag("ally"))
 		{
-			scoreObject.scorePlus();
+			scoreObject.EndGame();
 			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("it"))
-		{
-			scoreObject.scorePlus();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("gr"))
-		{scoreObject.scorePlus();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("fr"))
-		{scoreObject.scorePlus();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("TR"))
-		{scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
+			audioSource.PlayOneShot(deathsound);
+			Time.timeScale = 0;
+			
 		}
 	}
 }

@@ -5,39 +5,27 @@ using UnityEngine;
 public class Floor : MonoBehaviour
 {
 	public ScoreObj scoreObject;
+	public AudioClip killsound, deathsound;
+	private AudioSource audioSource;
+	private void Start()
+	{
+		audioSource = GetComponent<AudioSource>();
+	}
 	private void OnTriggerEnter2D(Collider2D killedObject)
 	{
-		if (killedObject.gameObject.CompareTag("uk"))
+		if (killedObject.gameObject.CompareTag("enemy"))
+		{
+			scoreObject.EndGame();
+			Destroy(killedObject.gameObject);
+			audioSource.PlayOneShot(deathsound);
+			Time.timeScale = 0;
 
-		{
-			scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
 		}
-		else if (killedObject.gameObject.CompareTag("ar"))
-
-		{
-			scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("it"))
-		{
-			scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("gr"))
-		{
-			scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("fr"))
-		{
-			scoreObject.EndGame();
-			Destroy(killedObject.gameObject);
-		}
-		else if (killedObject.gameObject.CompareTag("TR"))
+		else if (killedObject.gameObject.CompareTag("ally"))
 		{
 			scoreObject.scorePlus();
 			Destroy(killedObject.gameObject);
+			audioSource.PlayOneShot(killsound);
 		}
 	}
 }

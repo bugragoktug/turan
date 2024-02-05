@@ -43,6 +43,5 @@ public class ScoreObj : MonoBehaviour
 		highscoretext.SetText(PlayerPrefs.GetInt("score").ToString());
 		gameOverMenu.SetActive(true);
 		spawner.isGameStart = false;
-		
 	}
 }

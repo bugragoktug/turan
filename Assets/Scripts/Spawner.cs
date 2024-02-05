@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,10 +7,15 @@ public class Spawner : MonoBehaviour
 
     public float minTime,maxTime;
     public bool isGameStart;
-    public void StartGame()
+
+	public void StartGame()
     {
         isGameStart = true;
-    }
+		Time.timeScale = 1;
+
+
+	}
+	
 	public void EndGame()
 	{
         Application.Quit();
